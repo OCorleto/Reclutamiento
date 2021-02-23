@@ -8,11 +8,8 @@
 </head>
 <body>
     <%- include ('partials/navigation.html') %>
-    <br>
-    <hr>
-    <h1 class="animated animate__rubberBand"><center>Cinepolis</center></h1>
-    <hr>
-    <br>
+    <%- include ('partials/titulo.html') %>
+    
     <div class="cards">
     <% pelis.forEach(function(peli){ %>
         <div class="zoom">
@@ -21,7 +18,8 @@
             <div class="card-body">
             <h5 class="card-title"><%= peli.nombre %><br>(<%= peli.anio %>)</h5>
             <p class="card-text"><%= peli.director %></p>
-            <a href="#" class="btn btn-primary">Ver Cartelera </a>
+            <% var link = direccion+"/info/"+peli.id_peli; %>
+            <a href=<%= link %> class="btn btn-primary">Ver Cartelera </a>
             </div>
         </div>
         </div>

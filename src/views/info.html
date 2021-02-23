@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include ('partials/head.html')%>
+</head>
+<body>
+    
+    <%- include ('partials/navigation.html') %>
+    <%- include ('partials/titulo.html') %>
+    <div class="container">
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                <img src=<%= peli.img %> class="img-fluid" alt="">
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <h4 class="card-title"><%= peli.nombre %><br>(<%= peli.anio %>)</h4>
+                    <p class="card-text"><%= peli.descripcion %></p>
+                    <a href="#" class="btn btn-primary">BUTTON</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer w-100 text-muted">
+            <%= peli.director %>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
