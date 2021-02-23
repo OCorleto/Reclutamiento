@@ -1,0 +1,60 @@
+{
+	"id_peli": 1,
+	"nombre" : "The Room",
+	"descripcion": "La prometida (Juliette Danielle) de un banquero (Tommy Wiseau) exitoso seduce y manipula a su mejor amigo (Greg Sestero).",
+	"director": "Tommy Wiseau",
+	"img": "http://es.web.img3.acsta.net/pictures/15/11/10/17/39/276576.jpg",
+	"anio": 2003,
+	"taquilla": [],
+	"en_cartelera":1,
+	"categoria" : "B15",
+	"funciones":[]
+},
+{
+	"id_peli": 2,
+	"nombre" : "Donnie Darko",
+	"descripcion": "Un joven extraño a menudo es visitado por un conejo profético, que como él, aguarda el inminente fin del mundo.",
+	"director": "Richard Kelly",
+	"img": "https://pics.filmaffinity.com/Donnie_Darko-454757435-large.jpg",
+	"anio": 2001,
+	"taquilla": [],
+	"en_cartelera":1,
+	"categoria" : "B15",
+	"funciones":[]
+},
+{
+	"id_peli": 3,
+	"nombre" : "Space Jam",
+	"descripcion": "Michael Jordan entrena a Bugs Bunny y a sus amigos para un campeonato de baloncesto contra un equipo extraterrestre.",
+	"director":  "Joe Pytka",
+	"img": "https://i.ebayimg.com/images/g/nrwAAOxyY7FRDC-B/s-l400.jpg",
+	"anio": 1996,
+	"taquilla": [],
+	"en_cartelera":1,
+	"categoria" : "A",
+	"funciones":[]
+},
+{
+	"id_peli": 4,
+	"nombre" : "Joker",
+	"descripcion": "Arthur Fleck adora hacer reír a la gente, pero su carrera como comediante es un fracaso. El repudio social, la marginación y una serie de trágicos acontecimientos lo conducen por el sendero de la locura y, finalmente, cae en el mundo del crimen.",
+	"director":  "Tod Phillips",
+	"img": "https://as01.epimg.net/meristation/imagenes/2019/09/02/noticias/1567416125_321600_1567416190_sumario_normal.jpg",
+	"anio": 2019,
+	"taquilla": [],
+	"en_cartelera":1,
+	"categoria" : "C",
+	"funciones":[]
+},
+{
+	"id_peli": 5,
+	"nombre" : "Nito y Neto. Detectives por error",
+	"descripcion": "Una Banda internacional dedicada a laclonación de animales opera en Guatemala. Su centro de operaciones se encuentra en Panajachel, un paradisíaco lugar en las montañas a la orilla del lago de Atitlán. Nico y Neco, agentes de la C.A.C.A. (comosión Ambientalista Conservadora de Animales) son enviados para detenerlos. A la vez, Nito y Neto dedicen vacacionar y se hospedan en el mismo hotel que los agentes. Ahí surge el enredo. Los tipos malos creen que los verdaderos agentes son Nito y Neto, quienes sin entender por qué, son perseguidos por tierra y por agua defendiendose únicamente con su chispa y buen humor. Viva con Nito y Neto esta aventura, ria a carcajadas y disfrute de los hermosos paisajes del lago de Atitlán.",
+	"director":  "Nito y Neto",
+	"img": "https://i.ebayimg.com/images/i/202830576311-0-1/s-l1600.jpg",
+	"anio": 2005,
+	"taquilla": [],
+	"en_cartelera":1,
+	"categoria" : "B",
+	"funciones":[]
+}
