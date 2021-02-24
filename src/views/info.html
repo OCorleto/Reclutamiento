@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <%- include ('partials/head.html')%>
 </head>
 <body>
@@ -11,23 +10,39 @@
     <%- include ('partials/navigation.html') %>
     <%- include ('partials/titulo.html') %>
     <div class="container">
-    <div class="card">
-        <div class="row no-gutters">
-            <div class="col-auto">
-                <img src=<%= peli.img %> class="img-fluid" alt="">
-            </div>
-            <div class="col">
-                <div class="card-block px-2">
-                    <h4 class="card-title"><%= peli.nombre %><br>(<%= peli.anio %>)</h4>
-                    <p class="card-text"><%= peli.descripcion %></p>
-                    <a href="#" class="btn btn-primary">BUTTON</a>
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <img src=<%= peli.img %> class="img-fluid" alt="" width="300" height="450">
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <h4 class="card-title"><%= peli.nombre %><br>(<%= peli.anio %>)</h4>
+                        <p class="card-text"><%= peli.descripcion %></p>      
+                    </div>
+                    <br>
+                    <hr>
+                        <% fechas.forEach(function(fecha){%>
+                            <h5><%= fecha %></h5>
+                            <% var horas = []; %>
+                            <% peli.funciones.forEach(function(funcion){ %>
+                                <% if (funcion.fecha == fecha) {%>
+                                    <% horas.push({hora: funcion.hora.split(":")[0],minuto: funcion.hora.split(":")[1],id_funcion: funcion.id_funcion}); %>
+                                <% } %>
+                                <% horas.sort(function(a, b){return (a.hora*60+a.minuto) - (b.hora*60+b.minuto); }); %>
+                            <% }); %>
+                            <% horas.forEach(function(funcion){ %>
+                                <% var link = direccion+"/boletos?peli="+peli.id_peli+"&funcion="+funcion.id_funcion; %>
+                                <a href=<%= link %> class="btn btn-outline-primary"><%= funcion.hora+":"+funcion.minuto %></a>
+                            <% }); %>
+                            <br>
+                        <% }); %>
                 </div>
             </div>
+            <div class="card-footer w-100 text-muted">
+                <%= peli.director %>
+            </div>
         </div>
-        <div class="card-footer w-100 text-muted">
-            <%= peli.director %>
-        </div>
-    </div>
     </div>
 </body>
 </html>
