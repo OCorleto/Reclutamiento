@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('partials/head.html')%>
+</head>
+<body>
+    <%- include ('partials/navigation.html') %>
+    <%- include ('partials/titulo.html') %>
+    <div class="container">
+    <table class="auto-style1">
+        <tr id="butaca">
+            <% for (var cont = 1; cont<= funcion.asientos; cont++){ %>
+                
+                <td class="auto-style15">
+                    <button style="height:40px;width:40px" text-align:center><%= cont %></button>
+                </td>
+                <% if(cont % 8 == 0){ %>
+                    </tr>
+                    <tr>
+                <% } %>
+            <% } %>
+        </tr>
+    </table>
+    </div>
+    
+</body>
+</html>
