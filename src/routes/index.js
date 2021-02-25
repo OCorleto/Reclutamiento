@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const dirip = "http://localhost:3000"
+
 
 
 var mongoUtil = require( './dbMongo' );
+const dirip = mongoUtil.getIP();
 var db = mongoUtil.getDb();
 
 router.get('/',(req,res)=>{

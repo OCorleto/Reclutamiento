@@ -3,26 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/js/sala.js"></script>
     <%- include ('partials/head.html')%>
 </head>
 <body>
     <%- include ('partials/navigation.html') %>
     <%- include ('partials/titulo.html') %>
     <div class="container">
-    <table class="auto-style1">
-        <tr id="butaca">
-            <% for (var cont = 1; cont<= funcion.asientos; cont++){ %>
-                
-                <td class="auto-style15">
-                    <button style="height:40px;width:40px" text-align:center><%= cont %></button>
-                </td>
-                <% if(cont % 8 == 0){ %>
+        
+        <div class="row justify-content-center">
+            <div class="col">
+                <br>
+                <br>
+                <table class="auto-style1 cooltable">
+                    <tr>
+                        <td colspan="10"><h3><center>Sala <%= funcion.sala %></center></h3></td>
                     </tr>
                     <tr>
-                <% } %>
-            <% } %>
-        </tr>
-    </table>
+                    </tr>
+                    <tr>
+                        <td colspan="10" align="center"><img src="/images/pantalla.png"></td>
+                    </tr>
+                    <tr id="butaca">
+                        <td class="auto-style15">A</td>
+                        <% var letra = 65; %>
+                        <% var numasiento = 0; %>
+                        <% for (var cont = 1; cont<= funcion.asientos; cont++){ %>
+                            <td class="auto-style15">
+                                <p></p>
+                                <div class="zoom">
+                                    <% numasiento = (cont % 8 == 0) ? 8 : (cont % 8) %>
+                                <button class="btn btn-primary" style="height:40px;width:40px;background-color:#9b9b9b" text-align:center id=<%= String.fromCharCode(letra)+numasiento %> value = 0 onclick=newBoleto(this.id,<%= funcion.precio%>,this.value)>
+                                    <%= numasiento %>
+                                </button>
+                                </div>
+                            </td>
+                            <% if(cont % 8 == 0){ %>
+                                <td class="auto-style15"><%= String.fromCharCode(letra) %></td>
+                                </tr>
+                                <% if (cont != funcion.asiento) {%>    
+                                    <tr>
+                                    <% letra++ %>
+                                    <td class="auto-style15"><%= String.fromCharCode(letra) %></td>    
+                                <% } %>
+                            <% } %>
+                        <% } %>
+                    </tr>
+                    <tr>
+                        <td colspan="8">
+                            <br>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col">
+                <div class="card" style="width: 12rem;">
+                    <img src=<%= peli.img %> class="card-img-top" alt="..."  width="100" height="250">
+                    <div class="card-body align-items-center" style="align-items: center;">
+                        <h5 class="card-title" style="text-align: center;">Precio Boleto: Q<%= funcion.precio %> </h5>
+                        <br>
+                        <h5 class="card-title" style="text-align: center;">Numero de Boletos</h5>
+                        <p class="card-text" id="contboletos" style="text-align: center;">
+                            0
+                        </p>
+
+                        <h5 class="card-title" style="text-align: center;">Total a pagar</h5>
+                        <p class="card-text" id="conttotal" style="text-align: center;">
+                            0
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                  </div>
+            </div>
+        </div>
+        
+        
     </div>
     
 </body>
