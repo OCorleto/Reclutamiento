@@ -9,79 +9,90 @@
 <body>
     <%- include ('partials/navigation.html') %>
     <%- include ('partials/titulo.html') %>
-    <div class="container">
-        
-        <div class="row justify-content-center">
-            <div class="col">
-                <br>
-                <br>
-                <table class="auto-style1 cooltable">
-                    <tr>
-                        <td colspan="10"><h3><center>Sala <%= funcion.sala %></center></h3></td>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                        <td colspan="10" align="center"><img src="/images/pantalla.png"></td>
-                    </tr>
-                    <tr id="butaca">
-                        <td class="auto-style15">A</td>
-                        <% var letra = 65; %>
-                        <% var numasiento = 0; %>
-                        <% for (var cont = 1; cont<= funcion.asientos; cont++){ %>
-                            <td class="auto-style15">
-                                <p></p>
-                                <div class="zoom">
-                                    <% numasiento = (cont % 8 == 0) ? 8 : (cont % 8) %>
-                                <button class="btn btn-primary" style="height:40px;width:40px;background-color:#9b9b9b" text-align:center id=<%= String.fromCharCode(letra)+numasiento %> value = 0 onclick=newBoleto(this.id,<%= funcion.precio%>,this.value)>
-                                    <%= numasiento %>
-                                </button>
-                                </div>
-                            </td>
-                            <% if(cont % 8 == 0){ %>
-                                <td class="auto-style15"><%= String.fromCharCode(letra) %></td>
-                                </tr>
-                                <% if (cont != funcion.asiento) {%>    
-                                    <tr>
-                                    <% letra++ %>
-                                    <td class="auto-style15"><%= String.fromCharCode(letra) %></td>    
-                                <% } %>
-                            <% } %>
-                        <% } %>
-                    </tr>
-                    <tr>
-                        <td colspan="8">
-                            <br>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <br>
-            </div>
-            <div class="col-md-2"></div>
-            <div class="col">
-                <div class="card" style="width: 12rem;">
-                    <img src=<%= peli.img %> class="card-img-top" alt="..."  width="100" height="250">
-                    <div class="card-body align-items-center" style="align-items: center;">
-                        <h5 class="card-title" style="text-align: center;">Precio Boleto: Q<%= funcion.precio %> </h5>
-                        <br>
-                        <h5 class="card-title" style="text-align: center;">Numero de Boletos</h5>
-                        <p class="card-text" id="contboletos" style="text-align: center;">
-                            0
-                        </p>
-
-                        <h5 class="card-title" style="text-align: center;">Total a pagar</h5>
-                        <p class="card-text" id="conttotal" style="text-align: center;">
-                            0
-                        </p>
+    <div class="row justify-content-md-center">
+        <div class="col"></div>
+        <div class="col">
+            <table class="auto-style1 cooltable">
+                <tr>
+                <td colspan="10">
+                    <h3>
+                        <center>Sala <%= funcion.sala + " ("+peli.nombre+")"%> </center>
+                    </h3>
+                </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                <td colspan="10" align="center"><img src="/images/pantalla.png"></td>
+                </tr>
+                <tr id="butaca">
+                <td class="auto-style15">A</td>
+                <% var letra = 65; %>
+                <% var numasiento = 0; %>
+                <% for (var cont = 1; cont<= funcion.asientos; cont++){ %>
+                <td class="auto-style15">
+                    <p></p>
+                    <div class="zoom">
+                        <% numasiento = (cont % 8 == 0) ? 8 : (cont % 8) %>
+                        <button class="btn btn-primary" style="height:40px;width:40px;background-color:#9b9b9b" text-align:center id=<%= String.fromCharCode(letra)+numasiento %> value = 0 onclick=newBoleto(this.id,<%= funcion.precio%>,this.value)>
+                        <%= numasiento %>
+                        </button>
                     </div>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                  </div>
-            </div>
+                </td>
+                <% if(cont % 8 == 0){ %>
+                <td class="auto-style15"><%= String.fromCharCode(letra) %></td>
+                </tr>
+                <% if (cont != funcion.asientos) {%>
+                <tr>
+                <% letra++ %>
+                <td class="auto-style15"><%= String.fromCharCode(letra) %></td>
+                <% } %>
+                <% } %>
+                <% } %>
+                </tr>
+                <tr>
+                <td colspan="10">
+                    <br>
+                </td>
+                </tr>
+            </table>
         </div>
-        
-        
+        <div class="col"></div>
     </div>
-    
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card" style="max-width: 540px; min-width: 200px;"  >
+                <div class="row g-0">
+                   <div class="col-md-5">
+                      <img src=<%= peli.img %> class="card-img-top" alt="..."  height="100%">
+                   </div>
+                   <div class="col-md-7">
+                      <div class="card-body">
+                         <h5 class="card-title" style="text-align: center;">
+                         <%= funcion.fecha +" ("+ funcion.hora+")" %></h5>
+                         <h5 class="card-text" style="text-align: center;">
+                         Precio Boleto: Q<%= funcion.precio %></h5>
+                         <h5 class="card-text" style="text-align: center;">
+                         Numero de Boletos</h5>
+                         <p class="card-text" id="contboletos" style="text-align: center;">
+                            0
+                         </p>
+                         <h5 class="card-title" style="text-align: center;">
+                         Total a pagar</h5>
+                         <p class="card-text" id="conttotal" style="text-align: center;">
+                            0
+                         </p>
+                      </div>
+                   </div>
+                </div>
+                <a href="#" class="btn btn-primary">Comprar</a>
+             </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <br>
+    <br>
+    <%- include ('partials/footer.html') %>
 </body>
 </html>

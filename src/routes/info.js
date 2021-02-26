@@ -19,8 +19,7 @@ router.get('/info/:id',(req,res)=>{
                 if(!(fechas.includes(element.fecha)) ){
                     var dateParts = element.fecha.split("/");
                     var fechafunc = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
-                    if(Date.parse(today) <= fechafunc) console.log('es nueva fecha')
-                    fechas.push(element.fecha)
+                    if(Date.parse(today) <= fechafunc) fechas.push(element.fecha)
                 }
             });
             fechas = OrdenarFechas(fechas)

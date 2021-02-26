@@ -8,7 +8,55 @@
 	"taquilla": [],
 	"en_cartelera":1,
 	"categoria" : "B15",
-	"funciones":[]
+	"funciones":[{
+        "id_funcion": 1,
+        "fecha": "23/02/2021",
+        "hora": "10:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 2,
+        "fecha": "25/02/2021",
+        "hora": "16:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 3,
+        "fecha": "24/02/2021",
+        "hora": "17:50",
+        "sala": 2,
+        "asientos": 48,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 6,
+        "fecha": "23/02/2021",
+        "hora": "20:50",
+        "sala": 2,
+        "asientos": 48,
+        "ocupados": [],
+        "precio": 30
+    }, {
+        "id_funcion": 4,
+        "fecha": "23/02/2021",
+        "hora": "13:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 30
+    }, {
+        "id_funcion": 5,
+        "fecha": "21/02/2021",
+        "hora": "10:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }]
 },
 {
 	"id_peli": 2,
@@ -20,7 +68,55 @@
 	"taquilla": [],
 	"en_cartelera":1,
 	"categoria" : "B15",
-	"funciones":[]
+	"funciones":[{
+        "id_funcion": 1,
+        "fecha": "27/02/2021",
+        "hora": "08:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 2,
+        "fecha": "26/02/2021",
+        "hora": "21:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 3,
+        "fecha": "03/03/2021",
+        "hora": "15:50",
+        "sala": 2,
+        "asientos": 48,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 6,
+        "fecha": "23/02/2021",
+        "hora": "00:50",
+        "sala": 2,
+        "asientos": 48,
+        "ocupados": [],
+        "precio": 30
+    }, {
+        "id_funcion": 4,
+        "fecha": "23/02/2021",
+        "hora": "13:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 30
+    }, {
+        "id_funcion": 5,
+        "fecha": "01/03/2021",
+        "hora": "10:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }]
 },
 {
 	"id_peli": 3,
@@ -32,7 +128,31 @@
 	"taquilla": [],
 	"en_cartelera":1,
 	"categoria" : "A",
-	"funciones":[]
+	"funciones":[{
+        "id_funcion": 1,
+        "fecha": "27/02/2021",
+        "hora": "12:20",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 2,
+        "fecha": "26/02/2021",
+        "hora": "16:20",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 3,
+        "fecha": "02/03/2021",
+        "hora": "17:50",
+        "sala": 2,
+        "asientos": 48,
+        "ocupados": [],
+        "precio": 34
+    }]
 },
 {
 	"id_peli": 4,
@@ -44,7 +164,31 @@
 	"taquilla": [],
 	"en_cartelera":1,
 	"categoria" : "C",
-	"funciones":[]
+	"funciones":[{
+        "id_funcion": 1,
+        "fecha": "28/02/2021",
+        "hora": "09:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 2,
+        "fecha": "01/03/2021",
+        "hora": "21:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 3,
+        "fecha": "03/03/2021",
+        "hora": "15:50",
+        "sala": 2,
+        "asientos": 48,
+        "ocupados": [],
+        "precio": 34
+    }]
 },
 {
 	"id_peli": 5,
@@ -56,5 +200,29 @@
 	"taquilla": [],
 	"en_cartelera":1,
 	"categoria" : "B",
-	"funciones":[]
+	"funciones":[{
+        "id_funcion": 1,
+        "fecha": "28/02/2021",
+        "hora": "15:50",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 2,
+        "fecha": "28/02/2021",
+        "hora": "10:20",
+        "sala": 1,
+        "asientos": 40,
+        "ocupados": [],
+        "precio": 34
+    }, {
+        "id_funcion": 3,
+        "fecha": "28/02/2021",
+        "hora": "21:30",
+        "sala": 2,
+        "asientos": 48,
+        "ocupados": [],
+        "precio": 34
+    }]
 }

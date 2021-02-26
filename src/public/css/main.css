@@ -22,12 +22,12 @@ h1{
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-  
+
   /* Screen larger than 600px? 2 column */
 @media (min-width: 600px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
 }
-  
+
   /* Screen larger than 900px? 3 columns */
 @media (min-width: 900px) {
     .cards { grid-template-columns: repeat(3, 1fr); }
@@ -37,84 +37,14 @@ h1{
     transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-.carousel,.item,.active{
-    height:100%;
-    width: 200px;
-}
-.carousel-inner{
-     height:100%;
-}
 
 
 .auto-style1 {
-            width: 91%;
+            width: 50%;
         }
-        .auto-style2 {
-            text-align: center;
-            width: 1122px;
-        }
-        .auto-style3 {
-            width: 30px;
-            background-color: lightpink;
-            text-align: center;
-        }
-        .auto-style4 {
-            width: 35px;
-        }
-        .auto-style5 {
-            width: 36px;
-        }
-        .auto-style6 {
-            width: 30px;
-            height: 34px;
-        }
-        .auto-style7 {
-            width: 36px;
-            height: 34px;
-        }
-        .auto-style8 {
-            width: 35px;
-            height: 34px;
-        }
-        .auto-style10 {
-            width: 32px;
-        }
-        .auto-style11 {
-            width: 32px;
-            height: 34px;
-        }
-        .auto-style12 {
-            width: 34px;
-        }
-        .auto-style13 {
-            width: 34px;
-            height: 34px;
-        }
-        .nuevoEstilo1 {
-            border-top-style: solid;
-        }
-        .auto-style14 {
-            width: 35px;
-            height: 34px;
-            text-align: center;
-        }
+
         .auto-style15 {
             width: 35px;
-            text-align: center;
-        }
-        .auto-style16 {
-            text-align: center;
-        }
-        .auto-style17 {
-            width: 34px;
-            text-align: center;
-        }
-        .auto-style18 {
-            width: 32px;
-            text-align: center;
-        }
-        .auto-style19 {
-            width: 36px;
             text-align: center;
         }
         .highlighted {
@@ -124,17 +54,52 @@ h1{
 
 
 .cooltable
-{ 
-    background: rgba(250, 250, 255, 0.148438);	 
-    width: 80%; 
-    margin: 5% 5%; 
-    padding: 12px; 
-    border: solid 2px #fff; 
-    -webkit-border-radius: 8px; 
-    -moz-border-radius: 8px; 
-    border-radius: 8px; 
-    -webkit-box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 16px; 
-    -moz-box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 16px; 
-    box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 16px; 
+{
+    background: rgba(250, 250, 255, 0.148438);
+    border: solid 2px #fff;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.5) ;
+    -moz-box-shadow: rgba(255, 255, 255, 0.5) ;
+    box-shadow: rgba(255, 255, 255, 0.5) ;
 
-} 
+}
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #002e63;
+  color: white;
+}
