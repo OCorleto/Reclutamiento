@@ -17,7 +17,6 @@ router.post('/compra',(req,res)=>{
 })
 
 router.get('/compra',(req,res)=>{
-    console.log(datos)
     var id_peli = parseInt(datos.pelicula)
     var id_funcion = datos.funcion
     const query = { "id_peli": id_peli };
@@ -31,7 +30,11 @@ router.get('/compra',(req,res)=>{
                 break
             }
         }
-        res.render('compra.html',{peli: result,direccion:dirip,funcion:funcion,datos:datos});
+        db.collection("menu").find({}).toArray(function(err, menu) {
+            if (err) res.send(`Failed to find document: ${err}`)
+            console.log(menu)
+            res.render('compra.html',{peli: result,direccion:dirip,funcion:funcion,datos:datos,menu:menu});
+        });
       }
       else res.send("Película no encontrada")
     })
@@ -39,11 +42,9 @@ router.get('/compra',(req,res)=>{
 })
 
 router.post('/reservar',(req,res)=>{
-    console.log("Reservar asientos")
     let pelicula = req.body.pelicula
     let funcion = req.body.funcion
     let asientos = req.body.asientos
-    console.log(asientos)
     let query =   {
         "id_peli": pelicula,
         "funciones.id_funcion":funcion

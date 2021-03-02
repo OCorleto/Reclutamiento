@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="/js/form.js"></script>
     <%- include ('partials/head.html')%>
+    <link rel="stylesheet" href="/css/jscarousel.css">
 </head>
 <body>
     
@@ -41,6 +42,31 @@
                 </div>
             </div>
         </div>
+
+
+        <!--Carousel Wrapper-->
+        <div id="carrusel">
+            <a href="#" class="left-arrow"><i class="fas fa-angle-double-left"></i></a>
+            <a href="#" class="right-arrow"><i class="fas fa-angle-double-right"></i></a>
+            <div class="carrusel">
+
+                <% menu.forEach(function(producto) { %>
+                    <div class="product" id="product_<%= producto.id_prod %>">
+                        <img src="/images<%= producto.imagen %>" width="100" height="100" />
+                        <h5><%= producto.nombre %></h5>
+                        <p>Q <%= producto.precio %></p>
+                        <div class="btn-group card-text" role="group" aria-label="Basic example">
+                           <button type="button" class="btn btn-primary">-</button>
+                           <button type="button" class="btn btn-outline-primary" disabled>0</button>
+                           <button type="button" class="btn btn-primary">+</button>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+        <!--/.Carousel Wrapper-->
+
+
         </center>
 
         <form class="needs-validation" novalidate>
@@ -90,5 +116,56 @@
     <br>
     <br>
     <%- include ('partials/footer.html') %>
+    <% var numprod = 0; menu.forEach(function(producto) { numprod++; }); %>
+    <div id="variable" data-test = <%= numprod + 1%>></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        var current = 0;
+        var imagenes = new Array();
+        
+        $(document).ready(function() {
+            var numImages = document.getElementById('variable').dataset.test;
+            if (numImages <= 3) {
+                $('.right-arrow').css('display', 'none');
+                $('.left-arrow').css('display', 'none');
+            }
+        
+            $('.left-arrow').on('click',function() {
+                if (current > 0) {
+                    current = current - 1;
+                } else {
+                    current = numImages - 3;
+                }
+        
+                $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+        
+                return false;
+            });
+        
+            $('.left-arrow').on('hover', function() {
+                $(this).css('opacity','0.5');
+            }, function() {
+                $(this).css('opacity','1');
+            });
+        
+            $('.right-arrow').on('hover', function() {
+                $(this).css('opacity','0.5');
+            }, function() {
+                $(this).css('opacity','1');
+            });
+        
+            $('.right-arrow').on('click', function() {
+                if (numImages > current + 3) {
+                    current = current+1;
+                } else {
+                    current = 0;
+                }
+        
+                $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+        
+                return false;
+            }); 
+        });
+    </script>
 </body>
 </html>
