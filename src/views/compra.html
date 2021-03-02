@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/js/form.js"></script>
+    <%- include ('partials/head.html')%>
+</head>
+<body>
+    
+    <%- include ('partials/navigation.html') %>
+    <%- include ('partials/titulo.html') %>
+    <div class="container" style="background-color:#E6E6FA; padding: 20px;">
+        <center>
+        <div class="container">
+            <div class="card" style="max-width: 540px; min-width: 200px;"  >
+                <div class="row g-0">
+                   <div class="col-md-5">
+                      <img src=<%= peli.img %> class="card-img-top" alt="..."  height="100%">
+                   </div>
+                   <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">
+                        <%= peli.nombre %></h5>
+                         <h5 class="card-title" style="text-align: center;">
+                         <%= funcion.fecha +" ("+ funcion.hora+")" %></h5>
+                         <h5 class="card-text" style="text-align: center;">
+                         Precio Boleto: Q<%= funcion.precio %></h5>
+                         <h5 class="card-text" style="text-align: center;">
+                         Asientos</h5>
+                         <p class="card-text" id="contboletos" style="text-align: center;">
+                            <%= datos.asientos.sort() %>
+                         </p>
+                         <h5 class="card-title" style="text-align: center;">
+                         Total a pagar</h5>
+                         <p class="card-text" id="conttotal" style="text-align: center;">
+                            Q <%= (datos.numboletos * funcion.precio) %>
+                         </p>
+                      </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+        </center>
+
+        <form class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="nombreInput">Nombre</label>
+                    <input type="text" class="form-control" id="nombreInput" placeholder="Nombre" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="emailInput">Correo Electronico</label>
+                    <input type="email" class="form-control" id="emailInput" placeholder="Email" required>
+                </div>
+                <h5>Informacion de pago</h5>
+                <div class="col-md-4 mb-3">
+                    <label for="tarjetaInput">Numero de Tarjeta</label>
+                    <input type="number" class="form-control" id="tarjetaInput" placeholder="Trajeta" required>
+                </div>
+                Fecha de vencimiento
+                <div class="col-md-2 mb-2">
+                    <input type="number" class="form-control" id="monthInput" placeholder="month" min="1" max="12" required>
+                    <% var fechayear = new Date(); var lastyear = fechayear.getFullYear(); %>
+                    <input type="number" class="form-control" id="yearInput" placeholder="year" min=<%= lastyear %> required>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <label for="cvvInput">Codigo de Tarjeta</label>
+                    <input type="password" class="form-control" id="cvvInput" placeholder="CVV" required>
+                </div>
+                
+            </div>
+            <div class="form-group">
+                
+                <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Terminos y condiciones</a>
+               <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
+                  <label class="form-check-label" for="termsCheck">
+                  Acepto los terminos y condiciones
+                  </label>
+               </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <button class="btn btn-primary" type="button" onclick=comprar(<%= peli.id_peli %>,<%= funcion.id_funcion %>,"<%= direccion %>","<%= datos.asientos %>")>Confirmar Compra </button>
+            </div>
+            
+         </form>
+        
+    </div>
+    <br>
+    <br>
+    <%- include ('partials/footer.html') %>
+</body>
+</html>

@@ -32,12 +32,19 @@
                 <% for (var cont = 1; cont<= funcion.asientos; cont++){ %>
                 <td class="auto-style15">
                     <p></p>
-                    <div class="zoom">
-                        <% numasiento = (cont % 8 == 0) ? 8 : (cont % 8) %>
-                        <button class="btn btn-primary" style="height:40px;width:40px;background-color:#9b9b9b" text-align:center id=<%= String.fromCharCode(letra)+numasiento %> value = 0 onclick=newBoleto(this.id,<%= funcion.precio%>,this.value)>
-                        <%= numasiento %>
+                    <% numasiento = (cont % 8 == 0) ? 8 : (cont % 8) %>
+                    <% var strasiento = String.fromCharCode(letra)+numasiento;%>
+                    <% if (funcion.ocupados.includes(strasiento)) { %>
+                        <button class="btn btn-danger" style="height:40px;width:40px;background-color:#FF0000" text-align:center id=<%= strasiento %> value = 0 onclick=newBoleto(this.id,<%= funcion.precio%>,this.value) disabled>
+                            <%= numasiento %>
                         </button>
-                    </div>
+                    <% } else { %>
+                        <div class="zoom">
+                            <button class="btn btn-primary" style="height:40px;width:40px;background-color:#9b9b9b" text-align:center id=<%= strasiento %> value = 0 onclick=newBoleto(this.id,<%= funcion.precio%>,this.value)>
+                                <%= numasiento %>
+                            </button>
+                        </div>
+                    <% } %>
                 </td>
                 <% if(cont % 8 == 0){ %>
                 <td class="auto-style15"><%= String.fromCharCode(letra) %></td>
@@ -86,7 +93,7 @@
                       </div>
                    </div>
                 </div>
-                <a href="#" class="btn btn-primary">Comprar</a>
+                <button class="btn btn-primary" onclick=enviarDatos(<%= peli.id_peli %>,<%= funcion.id_funcion %>,"<%= direccion %>")>Comprar</button>
              </div>
         </div>
         <div class="col"></div>

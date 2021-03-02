@@ -21,6 +21,7 @@ connectMongo.connectToServer( function( err, client ) {
     app.use(require('./routes/index'))
     app.use(require('./routes/info'))
     app.use(require('./routes/boletos'))
+    app.use(require('./routes/compra'))
     app.listen(app.get('port'),()=>{
         console.log('Server on port', app.get('port'))
     })

@@ -30,3 +30,24 @@ function removeid(id){
     }
     return array
 }
+
+function enviarDatos(pelicula,funcion,ip){
+    console.log("Hice click en compra")
+    if(numboletos > 0){
+        data= {
+            pelicula:pelicula,
+            funcion:funcion,
+            asientos:asientos,
+            numboletos:numboletos
+        }
+        let url = ip+"/compra"
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers:{
+                "Content-Type" : "application/json"  }
+            })
+            .catch(error => console.log('Error:', error))
+            .then(res => window.location.href = ip+"/compra");
+    }else alert('Debe seleccionar los boletos que desea comprar')
+}
