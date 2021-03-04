@@ -56,16 +56,16 @@
                         <h5><%= producto.nombre %></h5>
                         <p>Q <%= producto.precio %></p>
                         <div class="btn-group card-text" role="group" aria-label="Basic example">
-                           <button type="button" class="btn btn-primary">-</button>
-                           <button type="button" class="btn btn-outline-primary" disabled>0</button>
-                           <button type="button" class="btn btn-primary">+</button>
+                           <button type="button" class="btn btn-primary" id = menosprod_<%= producto.id_prod %> onclick=menosProducto(this.id,<%= producto.precio %>)>-</button>
+                           <button type="button" class="btn btn-outline-primary" disabled id = totalprod_<%= producto.id_prod %>>0</button>
+                           <button type="button" class="btn btn-primary" id = masprod_<%= producto.id_prod %> onclick=masProducto(this.id,<%= producto.precio %>)>+</button>
                         </div>
                     </div>
                     <% }); %>
             </div>
         </div>
         <!--/.Carousel Wrapper-->
-
+        <h3>Total Menu Q <div id = "totalmenu">0</div></h3>
 
         </center>
 
@@ -107,7 +107,7 @@
                </div>
             </div>
             <div class="col-md-4 mb-3">
-                <button class="btn btn-primary" type="button" onclick=comprar(<%= peli.id_peli %>,<%= funcion.id_funcion %>,"<%= direccion %>","<%= datos.asientos %>")>Confirmar Compra </button>
+                <button class="btn btn-primary" type="button" onclick=comprar(<%= peli.id_peli %>,<%= funcion.id_funcion %>,"<%= direccion %>","<%= datos.asientos %>",<%= (datos.numboletos * funcion.precio) %>)>Confirmar Compra </button>
             </div>
             
          </form>
